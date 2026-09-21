@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="APRADA PROJECTS — inversión estructurada respaldada por activos reales.">
+<title>APRADA PROJECTS — Activos reales. Capital estructurado.</title>
+<link rel="canonical" href="https://apradaprojects.com/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#080A09;
+  --black-2:#111412;
+  --green:#C8FF00;
+  --green-soft:#A9D900;
+  --white:#F7F7F3;
+  --grey:#A5AAA5;
+  --line:rgba(247,247,243,.16);
+  --max:1180px;
+  --display:'Archivo', sans-serif;
+  --body:'Space Grotesk', sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:var(--body);
+  line-height:1.45;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+button,input{font:inherit}
+::selection{background:var(--green);color:var(--black)}
+
+.wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+
+/* ---------- HEADER ---------- */
+header{
+  position:relative;
+  z-index:10;
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  min-height:84px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+.monogram{
+  width:38px;height:38px;
+  display:grid;place-items:center;
+  border:2px solid var(--white);
+  font-family:var(--display);
+  font-weight:900;
+  font-size:14px;
+  letter-spacing:-.08em;
+}
+.brand-name{
+  font-family:var(--display);
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:-.06em;
+}
+.brand-name span{color:var(--green)}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+.nav-link{
+  text-decoration:none;
+  font-size:13px;
+  color:var(--grey);
+  transition:color .2s ease;
+}
+.nav-link:hover{color:var(--green)}
+.nav-status{
+  border:1px solid rgba(200,255,0,.55);
+  color:var(--green);
+  padding:8px 13px;
+  font-size:11px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:calc(100vh - 84px);
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:70px;
+  padding:72px 0 86px;
+}
+.kicker{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--green);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:11px;
+  font-weight:700;
+  margin-bottom:28px;
+}
+.kicker::before{
+  content:"";
+  width:34px;height:2px;
+  background:var(--green);
+}
+h1,h2,h3{
+  font-family:var(--display);
+  letter-spacing:-.055em;
+}
+.hero h1{
+  max-width:760px;
+  font-size:clamp(48px,7vw,92px);
+  line-height:.91;
+  font-weight:800;
+  text-transform:uppercase;
+}
+.hero h1 span{color:var(--green)}
+.lead{
+  max-width:620px;
+  margin-top:30px;
+  color:#C7CCC7;
+  font-size:18px;
+  line-height:1.6;
+}
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:38px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:0 20px;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-size:12px;
+  font-weight:700;
+  border:1px solid var(--green);
+  transition:transform .2s ease,background .2s ease,color .2s ease;
+}
+.btn-primary{background:var(--green);color:var(--black)}
+.btn-secondary{color:var(--white);border-color:var(--line)}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary:hover{background:var(--white);border-color:var(--white)}
+.btn-secondary:hover{background:var(--white);color:var(--black);border-color:var(--white)}
+
+.hero-art{
+  position:relative;
+  aspect-ratio:1/1;
+  min-height:360px;
+  display:grid;
+  place-items:center;
+}
+.hero-art::before{
+  content:"";
+  position:absolute;
+  inset:8%;
+  border:1px solid var(--line);
+  transform:rotate(45deg);
+}
+.hero-art::after{
+  content:"";
+  position:absolute;
+  inset:17%;
+  border:1px solid rgba(200,255,0,.45);
+}
+.ap-mark{
+  position:relative;
+  z-index:2;
+  font-family:var(--display);
+  font-weight:900;
+  font-size:clamp(100px,17vw,190px);
+  line-height:.75;
+  letter-spacing:-.15em;
+  transform:translateX(-.05em);
+}
+.ap-mark .a{color:var(--white)}
+.ap-mark .p{color:var(--green)}
+.coordinates{
+  position:absolute;
+  left:0;bottom:0;
+  font-size:10px;
+  color:var(--grey);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+.coordinates span{color:var(--green)}
+
+/* ---------- STRIP ---------- */
+.ticker{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.ticker-track{
+  display:flex;
+  gap:40px;
+  white-space:nowrap;
+  padding:14px 0;
+  font-family:var(--display);
+  font-weight:700;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.ticker-track span:nth-child(even){color:var(--green)}
+
+/* ---------- SECTIONS ---------- */
+section.block{padding:110px 0}
+.section-label{
+  color:var(--green);
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin-bottom:24px;
+}
+.section-title{
+  max-width:760px;
+  font-size:clamp(38px,5vw,68px);
+  line-height:.96;
+  text-transform:uppercase;
+  font-weight:800;
+}
+.section-intro{
+  max-width:610px;
+  color:var(--grey);
+  margin-top:22px;
+  font-size:16px;
+  line-height:1.65;
+}
+
+/* ---------- THESIS ---------- */
+.thesis{
+  border-bottom:1px solid var(--line);
+}
+.thesis-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:end;
+}
+.thesis-quote{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(28px,3.7vw,48px);
+  line-height:1.05;
+  letter-spacing:-.05em;
+}
+.thesis-quote span{color:var(--green)}
+.thesis-note{
+  color:var(--grey);
+  font-size:15px;
+  line-height:1.7;
+  padding-bottom:5px;
+}
+
+/* ---------- HOW ---------- */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  margin-top:58px;
+  border:1px solid var(--line);
+}
+.step{
+  min-height:310px;
+  padding:30px;
+  background:var(--black);
+  border-right:1px solid var(--line);
+}
+.step:last-child{border-right:0}
+.step-number{
+  color:var(--green);
+  font-family:var(--display);
+  font-size:13px;
+  font-weight:800;
+}
+.step h3{
+  margin-top:80px;
+  font-size:25px;
+  text-transform:uppercase;
+  line-height:1;
+}
+.step p{
+  margin-top:15px;
+  color:var(--grey);
+  font-size:14px;
+  line-height:1.65;
+  max-width:32ch;
+}
+
+/* ---------- VALUE ---------- */
+.value{
+  background:var(--white);
+  color:var(--black);
+}
+.value .section-label{color:#6E8F00}
+.value-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:90px;
+}
+.value h2{color:var(--black)}
+.value-list{margin-top:0}
+.value-item{
+  display:grid;
+  grid-template-columns:90px 1fr;
+  gap:20px;
+  padding:26px 0;
+  border-top:1px solid rgba(8,10,9,.16);
+}
+.value-item:last-child{border-bottom:1px solid rgba(8,10,9,.16)}
+.value-number{
+  color:#6E8F00;
+  font-family:var(--display);
+  font-size:13px;
+  font-weight:800;
+}
+.value-item h3{
+  font-size:19px;
+  text-transform:uppercase;
+  letter-spacing:-.035em;
+}
+.value-item p{
+  margin-top:7px;
+  color:#5D625D;
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* ---------- PROJECT ---------- */
+.project{
+  border-top:1px solid var(--line);
+}
+.project-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+.project-card{
+  aspect-ratio:4/3;
+  border:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+  background:#0D100E;
+}
+.project-card::before{
+  content:"";
+  position:absolute;
+  width:55%;
+  height:70%;
+  left:22%;
+  top:18%;
+  border:1px solid rgba(200,255,0,.6);
+  transform:skewY(-13deg);
+}
+.project-card::after{
+  content:"CURAGUA";
+  position:absolute;
+  right:18px;
+  bottom:15px;
+  color:rgba(200,255,0,.55);
+  font-family:var(--display);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+}
+.project-lines{
+  position:absolute;
+  inset:0;
+}
+.project-lines i{
+  position:absolute;
+  display:block;
+  height:1px;
+  background:var(--line);
+  transform-origin:left;
+}
+.project-lines i:nth-child(1){width:75%;left:8%;top:27%;transform:rotate(13deg)}
+.project-lines i:nth-child(2){width:68%;left:19%;top:68%;transform:rotate(-13deg)}
+.project-lines i:nth-child(3){width:52%;left:32%;top:15%;transform:rotate(90deg)}
+.project-copy .project-tag{
+  color:var(--green);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:700;
+}
+.project-copy h2{
+  margin-top:18px;
+  font-size:clamp(38px,5vw,64px);
+  line-height:.9;
+  text-transform:uppercase;
+}
+.project-copy p{
+  margin-top:24px;
+  color:var(--grey);
+  font-size:16px;
+  line-height:1.65;
+  max-width:50ch;
+}
+.project-status{
+  display:inline-block;
+  margin-top:28px;
+  border:1px solid var(--line);
+  padding:8px 13px;
+  color:var(--grey);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+/* ---------- CAPTURE ---------- */
+.capture{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:80px 0;
+}
+.capture-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:end;
+}
+.capture h2{
+  max-width:700px;
+  font-size:clamp(40px,5vw,70px);
+  line-height:.92;
+  text-transform:uppercase;
+}
+.capture h2 span{color:var(--green)}
+.capture-copy{
+  color:var(--grey);
+  font-size:15px;
+  line-height:1.6;
+}
+form{
+  display:flex;
+  gap:8px;
+  margin-top:25px;
+}
+input[type="email"]{
+  min-width:0;
+  flex:1;
+  height:50px;
+  border:1px solid var(--line);
+  background:transparent;
+  color:var(--white);
+  padding:0 15px;
+  outline:none;
+}
+input[type="email"]:focus{border-color:var(--green)}
+input[type="email"]::placeholder{color:#6F746F}
+form button{
+  height:50px;
+  padding:0 20px;
+  border:1px solid var(--green);
+  background:var(--green);
+  color:var(--black);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  font-size:11px;
+  cursor:pointer;
+}
+form button:hover{background:var(--white);border-color:var(--white)}
+
+.hero-capture{
+  margin-top:28px;
+  max-width:560px;
+  padding:16px;
+  border:1px solid rgba(200,255,0,.42);
+  background:rgba(200,255,0,.045);
+}
+.hero-capture-label{
+  color:var(--green);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.13em;
+  margin-bottom:10px;
+}
+.hero-capture-row{
+  display:flex;
+  gap:8px;
+}
+.hero-capture-row input{
+  flex:1;
+  min-width:0;
+  height:48px;
+  border:1px solid var(--line);
+  background:var(--black);
+  color:var(--white);
+  padding:0 14px;
+  outline:none;
+}
+.hero-capture-row input:focus{border-color:var(--green)}
+.hero-capture-row input::placeholder{color:#6F746F}
+.hero-capture-row button{
+  height:48px;
+  padding:0 19px;
+  border:1px solid var(--green);
+  background:var(--green);
+  color:var(--black);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.05em;
+  cursor:pointer;
+}
+.hero-capture-row button:hover{background:var(--white);border-color:var(--white)}
+.hero-capture > p{
+  margin-top:8px;
+  color:#7F857F;
+  font-size:10px;
+}
+.hero-capture-success{
+  display:none;
+  margin-top:8px;
+  color:var(--green);
+  font-size:11px;
+}
+.hero-capture-success.show{display:block}
+
+.capture-note{
+  margin-top:10px;
+  color:#6F746F;
+  font-size:11px;
+}
+.capture-success{
+  display:none;
+  margin-top:14px;
+  color:var(--green);
+  font-size:13px;
+}
+.capture-success.show{display:block}
+
+/* ---------- FOOTER ---------- */
+footer{padding:30px 0}
+.footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.footer-brand{
+  font-family:var(--display);
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:-.05em;
+}
+.footer-brand span{color:var(--green)}
+.footer-links{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.footer-links a{
+  color:var(--grey);
+  text-decoration:none;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.footer-links a:hover{color:var(--green)}
+.copyright{color:#626762;font-size:10px}
+
+/* ---------- ACCESSIBILITY ---------- */
+a:focus-visible,button:focus-visible,input:focus-visible{
+  outline:2px solid var(--green);
+  outline-offset:3px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    gap:45px;
+    padding-top:55px;
+  }
+  .hero-art{order:-1;min-height:300px;max-width:440px;margin:0 auto;width:100%}
+  .thesis-grid,.value-grid,.project-grid,.capture-grid{grid-template-columns:1fr;gap:45px}
+  .steps{grid-template-columns:1fr}
+  .step{min-height:auto;border-right:0;border-bottom:1px solid var(--line)}
+  .step:last-child{border-bottom:0}
+  .step h3{margin-top:45px}
+  .value-grid{gap:35px}
+  .capture-grid{gap:25px}
+}
+@media (max-width:640px){
+  .wrap{width:min(var(--max),calc(100% - 32px))}
+  .nav{min-height:70px}
+  .nav-right .nav-link{display:none}
+  .nav-status{padding:7px 9px;font-size:9px}
+  .brand-name{font-size:16px}
+  .monogram{width:32px;height:32px;font-size:12px}
+  .hero{min-height:auto;padding:55px 0 70px}
+  .hero h1{font-size:clamp(43px,14vw,68px)}
+  .lead{font-size:16px}
+  section.block{padding:78px 0}
+  .steps{margin-top:40px}
+  .step{padding:24px}
+  .value-item{grid-template-columns:55px 1fr}
+  .project-grid{gap:35px}
+  form{flex-direction:column}
+  form button,input[type="email"]{width:100%}
+  .hero-capture-row{flex-direction:column}
+  .hero-capture-row input,.hero-capture-row button{width:100%}
+  .footer{align-items:flex-start;flex-direction:column}
+  .copyright{order:3}
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand" aria-label="APRADA PROJECTS">
+      <span class="monogram" aria-hidden="true">AP</span>
+      <span class="brand-name">APRADA <span>PROJECTS</span></span>
+    </a>
+    <div class="nav-right">
+      <a class="nav-link" href="#modelo">Modelo</a>
+      <a class="nav-link" href="#proyecto">Proyecto</a>
+      <span class="nav-status">Acceso anticipado</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="wrap hero">
+  <div>
+    <p class="kicker">APRADA PROJECTS / 01</p>
+    <h1>Activos reales.<br><span>Capital estructurado.</span></h1>
+    <p class="lead">
+      Aprada convierte tierra en Venezuela en vehículos de inversión estructurados y con garantía real,
+      abriendo ese acceso a quienes normalmente quedan fuera de él.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#acceso">Quiero acceso</a>
+      <a class="btn btn-secondary" href="#modelo">Ver modelo</a>
+    </div>
+
+    <div class="hero-capture">
+      <div class="hero-capture-label">ACCESO ANTICIPADO</div>
+      <div class="hero-capture-row">
+        <input id="heroEmail" type="email" placeholder="tu@correo.com" autocomplete="email" aria-label="Correo electrónico">
+        <button type="button" id="heroSubmit">UNIRME</button>
+      </div>
+      <p>Recibe acceso a los próximos proyectos antes de su apertura.</p>
+      <span class="hero-capture-success" id="heroSuccess">Listo — te avisaremos cuando abra el primer proyecto.</span>
+    </div>
+  </div>
+
+  <div class="hero-art" aria-hidden="true">
+    <div class="ap-mark"><span class="a">A</span><span class="p">P</span></div>
+    <div class="coordinates">Real assets / <span>Real ownership</span></div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="wrap ticker-track">
+    <span>APRADA PROJECTS</span><span>ACTIVOS REALES</span>
+    <span>ESTRUCTURA</span><span>CAPITAL</span>
+    <span>PROYECTOS</span>
+  </div>
+</div>
+
+<section class="block thesis">
+  <div class="wrap thesis-grid">
+    <div>
+      <p class="section-label">La tesis</p>
+      <p class="thesis-quote">
+        La tierra respalda la inversión.
+        <span>El activo conserva valor recuperable.</span>
+      </p>
+    </div>
+    <p class="thesis-note">
+      La propuesta de Aprada parte de una idea sencilla: la inversión no depende solo de una promesa.
+      Los proyectos están anclados a activos reales y se estructuran antes de abrir la participación.
+    </p>
+  </div>
+</section>
+
+<section class="block" id="modelo">
+  <div class="wrap">
+    <p class="section-label">Cómo funciona / 02</p>
+    <h2 class="section-title">De activo a oportunidad de inversión.</h2>
+    <p class="section-intro">
+      Identificamos el activo, estructuramos el proyecto y abrimos la participación bajo una lógica clara.
+    </p>
+
+    <div class="steps">
+      <article class="step">
+        <span class="step-number">01</span>
+        <h3>Identificamos el activo</h3>
+        <p>
+          Evaluamos y estructuramos proyectos anclados a activos reales
+          antes de abrir la participación.
+        </p>
+      </article>
+
+      <article class="step">
+        <span class="step-number">02</span>
+        <h3>Capitalizamos el proyecto</h3>
+        <p>
+          Participas desde montos accesibles. Si no se alcanza el objetivo,
+          tu capital se devuelve por completo.
+        </p>
+      </article>
+
+      <article class="step">
+        <span class="step-number">03</span>
+        <h3>El activo genera retorno</h3>
+        <p>
+          Recibes participación accionaria en la empresa dueña del bien,
+          con retorno según el proyecto.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block value">
+  <div class="wrap value-grid">
+    <div>
+      <p class="section-label">Propuesta / 03</p>
+      <h2 class="section-title">Un modelo cerrado hasta ahora para pocos.</h2>
+    </div>
+
+    <div class="value-list">
+      <article class="value-item">
+        <span class="value-number">01</span>
+        <div>
+          <h3>Entrada accesible</h3>
+          <p>Sin los montos mínimos que exige la inversión institucional tradicional.</p>
+        </div>
+      </article>
+
+      <article class="value-item">
+        <span class="value-number">02</span>
+        <div>
+          <h3>Propiedad, no promesa</h3>
+          <p>Participación real en la empresa dueña del activo, no un contrato de expectativa.</p>
+        </div>
+      </article>
+
+      <article class="value-item">
+        <span class="value-number">03</span>
+        <div>
+          <h3>Diseñado para la diáspora</h3>
+          <p>Pensado para quienes quieren invertir en Venezuela desde cualquier parte del mundo.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block project" id="proyecto">
+  <div class="wrap project-grid">
+    <div class="project-card" aria-hidden="true">
+      <div class="project-lines">
+        <i></i><i></i><i></i>
+      </div>
+    </div>
+
+    <div class="project-copy">
+      <p class="project-tag">Primer proyecto / 04</p>
+      <h2>Curagua<br>Village</h2>
+      <p>
+        Hospitality Venture
+      </p>
+      <span class="project-status">Detalles próximamente</span>
+    </div>
+  </div>
+</section>
+
+<section class="capture" id="acceso">
+  <div class="wrap capture-grid">
+    <div>
+      <p class="section-label">Acceso anticipado / 05</p>
+      <h2>Sé de los primeros en <span>tener acceso.</span></h2>
+    </div>
+
+    <div>
+      <p class="capture-copy">
+        Déjanos tu correo y te avisaremos cuando abra el primer proyecto.
+        Sin compromiso.
+      </p>
+
+      <form id="captureForm">
+        <label for="email" style="position:absolute;left:-9999px">Correo electrónico</label>
+        <input id="email" type="email" name="email" placeholder="tu@correo.com" autocomplete="email" required>
+        <button type="submit">Unirme</button>
+      </form>
+
+      <p class="capture-success" id="captureSuccess">Listo — revisa tu correo para confirmar.</p>
+      <p class="capture-note">Formulario preparado para conectar con el servicio de captación elegido.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap footer">
+    <span class="footer-brand">APRADA <span>PROJECTS</span></span>
+    <div class="footer-links">
+      <a href="#" aria-label="Instagram" data-social="instagram">Instagram</a>
+      <a href="#" aria-label="TikTok" data-social="tiktok">TikTok</a>
+      <a href="#" aria-label="LinkedIn" data-social="linkedin">LinkedIn</a>
+      <a href="#" aria-label="X" data-social="x">X</a>
+    </div>
+    <span class="copyright">© 2026 Aprada Projects</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function showSuccess(input, successEl){
+    const email = input.value.trim();
+    if(!email || !input.checkValidity()) {
+      input.reportValidity();
+      return;
+    }
+
+    /*
+      FORMULARIOS: todavía no están conectados a un servicio real.
+      Aquí puedes conectar Formspree, Brevo, Mailchimp o un backend propio.
+    */
+    input.value = '';
+    successEl.classList.add('show');
+  }
+
+  const form = document.getElementById('captureForm');
+  const success = document.getElementById('captureSuccess');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    showSuccess(form.querySelector('input[type="email"]'), success);
+  });
+
+  const heroInput = document.getElementById('heroEmail');
+  const heroButton = document.getElementById('heroSubmit');
+  const heroSuccess = document.getElementById('heroSuccess');
+
+  heroButton.addEventListener('click', function(){
+    showSuccess(heroInput, heroSuccess);
+  });
+
+  heroInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){
+      e.preventDefault();
+      showSuccess(heroInput, heroSuccess);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
